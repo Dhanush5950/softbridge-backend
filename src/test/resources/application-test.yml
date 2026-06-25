@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/SOFTBRIDGE
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+      management:
+        health:
+          mail:
+            enabled: false
+
+jwt:
+  secret: 5A7134743777217A25432A462D4A614E645267556B58703272357538782F413F
+  expiration-ms: 86400000
+  refresh-expiration-ms: 604800000
+
+management:
+  health:
+    mail:
+      enabled: false
