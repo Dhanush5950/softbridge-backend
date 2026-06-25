@@ -8,11 +8,10 @@ spring:
     name: softbridge-backend
 
   datasource:
-    url: jdbc:mysql://localhost:3306/SOFTBRIDGE?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: root
-    password: root
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
-
   jpa:
     hibernate:
       ddl-auto: update
@@ -25,8 +24,9 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: your_email@gmail.com
-    password: your_app_password
+    mail:
+      username: ${MAIL_USERNAME}
+      password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -34,9 +34,9 @@ spring:
           starttls:
             enable: true
 
+
 jwt:
-  secret: 5A7134743777217A25432A462D4A614E645267556B58703272357538782F413F
-  expiration-ms: 86400000
+  secret: ${JWT_SECRET}
   refresh-expiration-ms: 604800000
 
 app:
